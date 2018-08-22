@@ -1,0 +1,22 @@
+{% extends 'root.html' %}
+{% block content %}
+<div class="card">
+    <h1>Order</h1>
+    <form method="POST"> {% csrf_token %}
+        <div class="form-group">
+            <label>Shopname:</label>
+            {{ form.shopname }}
+        </div>
+        <div class="form-group">
+            <label>Items:</label>
+            {{ form.items }}
+        </div>
+        <div class="form-group">
+            <label>Description:</label>
+            {{ form.description }}
+        </div>
+        <button type="submit" class="btn btn-primary btn-sm">Order</button>
+    </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% include 'tools/css.html' %}
+</head>
+
+<body>
+
+    {% include 'tools/navbar.html' %}
+
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+
+
+    {% include 'tools/js.html' %}
+
+</body>
+
+</html>
