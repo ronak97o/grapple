@@ -8,4 +8,5 @@ urlpatterns = [
     url(r'^$', ProductView  ),
     url(r'^order/$',order_page,name="order"),
     url(r'^success/$',success,name="success")
+
     ]

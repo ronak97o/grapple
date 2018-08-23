@@ -12,7 +12,34 @@
 <h2>{{request.user.first_name}}</h2>
 
     {% endif %}
+
+
+    <table>
+    <tr>
+        <th>Field1</th>
+        ...
+        <th>Field N</th>
+    </tr>
+    {% for item in qs %}
+    <tr>
+        <td>{{ item.shopname }}</td>
+         <td>{{ item.description }}</td>
+        <td>{{ item.items }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+
+
+
+
+
+
+
+
+
 <form method="POST" action="">
+
     {% csrf_token %}
     {{form.media}}
     {{form.as_p}}

@@ -1,11 +1,25 @@
 from django.contrib.auth import authenticate, login, get_user_model
 from django.http import HttpResponse
-from django.shortcuts import render
+import sys
+
+sys.path.append("..")
+from django.shortcuts import render, render_to_response
+from django.views.generic import TemplateView,ListView
+from products.models import Order
 
 # Create your views here.
 # from ..login.forms import LoginForm
 from django.contrib.auth.models import User
 # from .forms import CityForm
+
+
+def MyView(request):
+
+    qs = Order.objects.all()
+    context = {"qs":qs}
+
+    return render(request,"home/home.html",context)
+
 def home(request):
     # context = {
     #     "title" : "hello",
@@ -31,8 +45,11 @@ def home(request):
     context = {
 
         "content": " Welcome to the homepage.",
-        # "form" : form
+
+
+
     }
+
 
     if request.user.is_authenticated():
         context["prime"] = "Welcome back"
